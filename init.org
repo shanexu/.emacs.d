@@ -23,13 +23,14 @@
 #+end_src
 
 * UI Tweak
+disable menu bar, scroll bar and tool bar.
 #+begin_src emacs-lisp
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
 #+end_src
 
-disable \*Gnu Emacs\* buffer
+disable the \*Gnu Emacs\* buffer.
 #+begin_src emacs-lisp
   (setq inhibit-startup-message t)
 #+end_src
@@ -38,6 +39,21 @@ disable \*Gnu Emacs\* buffer
   (use-package standard-themes
     :config
     (load-theme 'standard-light t))
+#+end_src
+** Auto swith Dark and Light theme
+#+begin_src emacs-lisp
+  (defun load-dark-theme ()
+    (load-theme 'standard-dark t))
+
+  (defun load-light-theme ()
+    (load-theme 'standard-light t))
+
+  (use-package auto-dark
+    :straight (auto-dark :type git :host github :repo "shanexu/auto-dark-emacs")
+    :config
+    (setq auto-dark-dark-mode-hook 'load-dark-theme)
+    (setq auto-dark-light-mode-hook 'load-light-theme)
+    (auto-dark-mode t))
 #+end_src
 
 ** Chinese

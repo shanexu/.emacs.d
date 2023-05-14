@@ -24,6 +24,19 @@
   :config
   (load-theme 'standard-light t))
 
+(defun load-dark-theme ()
+  (load-theme 'standard-dark t))
+
+(defun load-light-theme ()
+  (load-theme 'standard-light t))
+
+(use-package auto-dark
+  :straight (auto-dark :type git :host github :repo "shanexu/auto-dark-emacs")
+  :config
+  (setq auto-dark-dark-mode-hook 'load-dark-theme)
+  (setq auto-dark-light-mode-hook 'load-light-theme)
+  (auto-dark-mode t))
+
 (use-package cnfonts
   :config
   (cnfonts-mode 1))
