@@ -1,0 +1,90 @@
+#+PROPERTY: header-args :tangle init.el
+
+* Greeting
+#+begin_src emacs-lisp
+  (message "hello world")
+#+end_src
+
+* Package Manager
+#+begin_src emacs-lisp
+  (setq straight-use-package-by-default t)
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 6))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+	  (url-retrieve-synchronously
+	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+#+end_src
+
+* UI Tweak
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+#+end_src
+
+disable \*Gnu Emacs\* buffer
+#+begin_src emacs-lisp
+  (setq inhibit-startup-message t)
+#+end_src
+** Theme
+#+begin_src emacs-lisp
+  (use-package standard-themes
+    :config
+    (load-theme 'standard-light t))
+#+end_src
+
+** Chinese
+#+begin_src emacs-lisp
+  (use-package cnfonts
+    :config
+    (cnfonts-mode 1))
+#+end_src
+
+* org
+#+begin_src emacs-lisp
+  (use-package org
+    :hook
+    (org-mode . org-indent-mode))
+#+end_src
+
+** superstar
+#+begin_src emacs-lisp
+  (use-package org-superstar
+    :hook
+    (org-mode . org-superstar-mode))
+#+end_src
+
+* Completion
+#+begin_src emacs-lisp
+  (use-package vertico
+    :init
+    (vertico-mode)
+
+    ;; Different scroll margin
+    ;; (setq vertico-scroll-margin 0)
+
+    ;; Show more candidates
+    ;; (setq vertico-count 20)
+
+    ;; Grow and shrink the Vertico minibuffer
+    ;; (setq vertico-resize t)
+
+    ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+    ;; (setq vertico-cycle t)
+    )
+#+end_src
+
+* Term
+** vterm
+#+begin_src emacs-lisp
+  (use-package vterm
+    :ensure t)
+#+end_src
+
