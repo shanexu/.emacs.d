@@ -5,7 +5,7 @@
         ("Hiragino Sans GB" "文泉驿等宽微米黑" "Noto Sans CJK SC" "思源黑体 CN" "微软雅黑" "Noto Sans Mono CJK SC" "Noto Sans Mono CJK TC" "Noto Sans CJK TC" "Microsoft Yahei" "Microsoft YaHei Mono" "Microsoft_Yahei" "Ubuntu Mono" "文泉驿等宽正黑" "黑体" "Source Han Serif CN" "Source Han Sans CN" "思源宋体 CN" "文泉驿正黑" "文泉驿点阵正黑" "SimHei" "SimSun" "NSimSun" "FangSong" "KaiTi" "FangSong_GB2312" "KaiTi_GB2312" "LiSu" "YouYuan" "新宋体" "宋体" "楷体_GB2312" "仿宋_GB2312" "幼圆" "隶书" "STXihei" "STKaiti" "STSong" "STFangsong" "STXingkai" "华文仿宋" "华文行楷" "华文细黑" "华文楷体")
         ("HanaMinB" "SimSun-ExtB" "MingLiU-ExtB" "PMingLiU-ExtB" "MingLiU_HKSCS-ExtB" "Hanazono Mincho" "Hanazono Mincho A" "Hanazono Mincho B" "Hanazono Mincho C" "Hanazono Mincho Ex" "Hanazono Mincho Ex A1" "Hanazono Mincho Ex A2" "Hanazono Mincho Ex B" "Hanazono Mincho Ex C" "Hanazono Mincho I")
         ("Symbola" "Segoe UI Symbol" "Standard Symbols L")
-        ("NanumGothic" "Arial Unicode MS" "MS Gothic" "Lucida Sans Unicode")
+        ("Arial Unicode MS" "NanumGothic" "MS Gothic" "Lucida Sans Unicode")
         ))
 
 ;; `cnfonts--custom-set-fontsizes' 结构与 `cnfonts--fontsizes-fallback' 相同。
