@@ -61,6 +61,7 @@ disable the \*Gnu Emacs\* buffer.
 #+begin_src emacs-lisp
   (use-package spaceline
     :config
+    (setq powerline-default-separator nil)
     (require 'spaceline-config)
     (spaceline-emacs-theme))
 #+end_src
@@ -153,7 +154,16 @@ disable the \*Gnu Emacs\* buffer.
 #+begin_src emacs-lisp
   (use-package smartparens
     :config
-    (require 'smartparens-config))
+    (smartparens-global-mode)
+    (add-to-list 'sp-lisp-modes 'sly-mrepl-mode)
+    (require 'smartparens-config)
+    (setq sp-highlight-pair-overlay nil
+          sp-highlight-wrap-overlay nil
+          sp-highlight-wrap-tag-overlay nil)
+    (setq sp-max-prefix-length 25)
+    (setq sp-max-pair-length 4)
+    (sp-local-pair '(minibuffer-mode minibuffer-inactive-mode) "'" nil :actions nil)
+    (sp-local-pair '(minibuffer-mode minibuffer-inactive-mode) "`" nil :actions nil))
 #+end_src
 * Term
 ** vterm
