@@ -1,5 +1,23 @@
 #+PROPERTY: header-args :tangle init.el
 
+* Table of Contents                                           :TOC:
+- [[#greeting][Greeting]]
+- [[#package-manager][Package Manager]]
+- [[#ui-tweak][UI Tweak]]
+  - [[#theme][Theme]]
+  - [[#auto-swith-dark-and-light-theme][Auto swith Dark and Light theme]]
+  - [[#mode-line][Mode Line]]
+  - [[#layout][Layout]]
+  - [[#chinese][Chinese]]
+- [[#org][org]]
+  - [[#superstar][superstar]]
+- [[#completion][Completion]]
+- [[#editor][Editor]]
+  - [[#editorconfig][editorconfig]]
+  - [[#smartparens][smartparens]]
+- [[#term][Term]]
+  - [[#vterm][vterm]]
+
 * Greeting
 #+begin_src emacs-lisp
   (message "hello world")
