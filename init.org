@@ -57,6 +57,21 @@ disable the \*Gnu Emacs\* buffer.
     (setq auto-dark-light-mode-hook 'load-light-theme)
     (auto-dark-mode t))
 #+end_src
+** Mode Line
+#+begin_src emacs-lisp
+  (use-package spaceline
+    :config
+    (require 'spaceline-config)
+    (spaceline-emacs-theme))
+#+end_src
+** Layout
+#+begin_src emacs-lisp
+  (use-package winum
+    :init
+    (setq winum-auto-setup-mode-line nil)
+    :config
+    (winum-mode))
+#+end_src
 
 ** Chinese
 #+begin_src emacs-lisp
@@ -125,6 +140,21 @@ disable the \*Gnu Emacs\* buffer.
           completion-category-overrides '((file (styles partial-completion)))))
 #+end_src
 
+* Editor
+
+** editorconfig
+#+begin_src emacs-lisp
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1))
+#+end_src
+** smartparens
+#+begin_src emacs-lisp
+  (use-package smartparens
+    :config
+    (require 'smartparens-config))
+#+end_src
 * Term
 ** vterm
 #+begin_src emacs-lisp
